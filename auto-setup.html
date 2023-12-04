@@ -8,8 +8,7 @@
   <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`head`)[0].innerHTML; document.body.innerHTML = ``; document.body.appendChild(pre)', 'View Head Raw')">View Head Raw</button>
   <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`body`)[0].innerHTML; document.body.innerHTML = ``; document.body.appendChild(pre)', 'View Body Raw')">View Body Raw</button>
   <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`html`)[0].innerHTML; document.body.innerHTML = ``; document.body.appendChild(pre)', 'View Raw')">View Raw</button>
-  <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`html`)[0].innerHTML; document.body.innerHTML = ``; pre.style.backgroundColor = `black`; pre.style.color = `white`; document.body.appendChild(pre); document.body.contentEditable = true;
-')">Edit Raw</button>
+  <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`html`)[0].innerHTML; document.body.innerHTML = ``; pre.style.backgroundColor = `black`; pre.style.color = `white`; document.body.appendChild(pre); document.body.contentEditable = true;', 'Edit Raw')">Edit Raw</button>
   <button onclick="addBookmark('javascript:document.getElementsByTagName(`html`)[0].innerHTML = document.getElementsByTagName(`pre`)[0].innerText', 'Save Raw')">Save Raw</button>
   <script>
     function addBookmark(url, name) {
