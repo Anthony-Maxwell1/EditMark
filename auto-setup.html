@@ -13,7 +13,7 @@
   <button onclick="addBookmark('javascript:document.getElementsByTagName(`html`)[0].innerHTML = document.getElementsByTagName(`pre`)[0].innerText')">Save Raw</button>
   <script>
     function addBookmark(url) {
-        window.location.href = url;
+        window.history.pushState(url);
     }
   </script>
 </body>
