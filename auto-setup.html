@@ -5,28 +5,15 @@
   <button onclick="addBookmark('javascript:document.body.contentEditable %3D %27true%27%3B document.designMode%3D%27on%27%3B void 0', 'Unlock Page')">Unlock Page</button>
   <button onclick="addBookmark('javascript:document.body.contentEditable %3D %27false%27%3B document.designMode%3D%27on%27%3B void 0', 'Lock Page')">Lock Page</button>
   <button onclick="addBookmark('javascript:document.body.innerHTML = ``', 'Clear Page')">Clear Page</button>
-  <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`head`)[0].innerHTML; document.body.innerHTML = ``; document.body.appendChild(pre)', 'View Head Raw')">View Head Raw</button>
-  <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`body`)[0].innerHTML; document.body.innerHTML = ``; document.body.appendChild(pre)', 'View Body Raw')">View Body Raw</button>
-  <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`html`)[0].innerHTML; document.body.innerHTML = ``; document.body.appendChild(pre)', 'View Raw')">View Raw</button>
+  <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`head`)[0].innerHTML; document.body.innerHTML = ``; document.body.appendChild(pre)')">View Head Raw</button>
+  <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`body`)[0].innerHTML; document.body.innerHTML = ``; document.body.appendChild(pre)')">View Body Raw</button>
+  <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`html`)[0].innerHTML; document.body.innerHTML = ``; document.body.appendChild(pre)')">View Raw</button>
   <button onclick="addBookmark('javascript:pre = document.createElement(`pre`); pre.innerText = document.getElementsByTagName(`html`)[0].innerHTML; document.body.innerHTML = ``; pre.style.backgroundColor = `black`; pre.style.color = `white`; document.body.appendChild(pre); document.body.contentEditable = true;
 ')">Edit Raw</button>
-  <button onclick="addBookmark('javascript:document.getElementsByTagName(`html`)[0].innerHTML = document.getElementsByTagName(`pre`)[0].innerText', 'Save Raw')">Save Raw</button>
+  <button onclick="addBookmark('javascript:document.getElementsByTagName(`html`)[0].innerHTML = document.getElementsByTagName(`pre`)[0].innerText')">Save Raw</button>
   <script>
-      function addBookmark(url, title) {
-
-        if (window.external && ('AddFavorite' in window.external)) {
-            window.external.AddFavorite(url, title);
-        } else if (window.sidebar && window.sidebar.addPanel) {
-            window.sidebar.addPanel(title, url, '');
-        } else if (window.opera && window.print) {
-            var elem = document.createElement('a');
-            elem.setAttribute('href', url);
-            elem.setAttribute('title', title);
-            elem.setAttribute('rel', 'sidebar');
-            elem.click();
-        } else {
-            document.body.innerText = "This Browser does not support auto-bookmarking. Please refer to manual method."
-        }
+    function addBookmark(url) {
+        window.location.href = url;
     }
   </script>
 </body>
