@@ -42,6 +42,6 @@ document.getElementById('addEdit').addEventListener('click', function() {
 
 document.getElementById('addSave').addEventListener('click', function() {
   browser.bookmarks.getTree().then(function(tree) {
-    browser.bookmarks.create({ title: "Save Raw HTML", url: "javascript:document.body.contentEditable = true; document.designMode = true;", parentId: tree[0].children[0].id });
+    browser.bookmarks.create({ title: "Save Raw HTML", url: 'javascript:document.getElementsByTagName("html")[0].innerHTML = document.getElementsByTagName("pre")[0].innerText', parentId: tree[0].children[0].id });
   }
 });
